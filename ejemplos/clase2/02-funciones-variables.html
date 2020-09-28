@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script>
+			/* Guardo la función en una variable */
+			const test = function(arg) {
+				console.log(arg);
+			}
+
+			/* Simplificación de la función
+				¡ No hace bind al objeto !
+			*/
+			const flecha = (arg) => {
+				console.log(arg);
+			}
+
+			/* Devuelve sin especificar return */
+			const flechaCorta = arg => arg*2;
+
+			/* Paso una función como argumento */
+			function main(miFunc) {
+				const texto = 'texto';
+				miFunc(texto);
+			}
+			
+			main(test);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

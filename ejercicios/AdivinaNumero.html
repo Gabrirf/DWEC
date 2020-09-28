@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var max = 10;
+    var min = 1;
+
+    var numero_secreto = Math.random();
+    var numero_secreto = Math.random() * (max-min) + min;
+    numero_secreto = parseInt(numero_secreto);
+
+    console.log(numero_secreto);
+    var mensaje = "Introduce el numero";
+
+    while(true){
+      var numero_del_usuario = prompt(mensaje,"0");
+      numero_del_usuario = parseInt(numero_del_usuario);
+      if(numero_del_usuario === numero_secreto){
+        alert("Has ganado!!!");
+        break;
+      }
+      else if(numero_del_usuario === 0){
+        break;
+      }
+      else if(numero_del_usuario > numero_secreto){
+        mensaje = "El numero es menor!!!";
+      }
+      else if (numero_del_usuario < numero_secreto){
+        mensaje = "El numero es mayor!!!";
+      }
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

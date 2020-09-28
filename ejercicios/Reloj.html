@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reloj</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+window.onload = reloj;
+
+
+
+
+function reloj(){
+	escribir();
+	id = setInterval(escribir,1000);
+}
+
+function escribir(){
+	let d = new Date();
+
+	var h,m,s;
+
+		if(d.getSeconds>59){
+			d.getMinutes++;
+			d.getSeconds = 0;
+
+		}
+
+	if(d.getMinutes>59){
+		d.getHours++;
+		d.getMinutes = 0;
+	}
+
+   
+
+	
+	document.body.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+}
+
+
+
+
+
+
+
+
+</script>
+</html>
