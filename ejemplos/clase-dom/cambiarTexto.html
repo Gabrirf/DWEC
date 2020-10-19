@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cambiar texto</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function cambiarTexto(argument) {
+                const parrafo = document.getElementById('p1');
+                if (parrafo.innerHTML == 'Hello World !') {
+                    parrafo.innerHTML = "Hello Universe !!";
+                } else {
+                    parrafo.innerHTML = "Hello World !";
+                }
+            }
+        </script>
+        <p id="p1">Hello World !</p>
+        <button onclick="cambiarTexto()">Pulsame</button>
+    </body>
+</html>

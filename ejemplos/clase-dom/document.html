@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objeto Location</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function verDOM(argument) {
+                const html = document.documentElement;
+                const head = html.firtChild;
+                // const head = html.childNodes[0];
+                const body = document.body;
+                // const body = html.lastChild;
+                // const body = html.childNodes[1];
+                const nElementos = body.childNodes.length;
+                alert(nElementos);
+            }
+        </script>
+        <p>Soy un parrafo</p>
+        <p>Soy un parrafo</p>
+        <p>Soy un parrafo</p>
+        <button onclick="verDOM()">Pulsame</button>
+    </body>
+</html>

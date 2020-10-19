@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Añadir elemento</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function addElement(argument) {
+                const parrafo = document.createElement('p');
+                document.body.appendChild(parrafo);
+                parrafo.innerHTML = "Nuevo párrafo";
+            }
+        </script>
+        <button onclick="addElement()">Pulsame</button>
+    </body>
+</html>
