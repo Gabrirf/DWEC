@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Focus</title>
+</head>
+<body onload="focusText()">
+	<script type="text/javascript">
+		function focusText(argument) {
+			document.getElementById("primero").focus();
+		}
+	</script>
+
+<form id="formulario" action="#">
+  <input type="text" id="primero" onblur="focusText()" />
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			window.onload = iniciar;
+
+			function iniciar(){
+				const botonEnviar = document.getElementById('enviar');
+				botonEnviar.addEventListener('click', validar, false);
+			}
+			function validaVacio(id){
+				var elemento = document.getElementById(id);
+				if(elemento.value === ''){
+					alert('El campo no puede estar vacío');
+					return false;
+				}
+				return true;
+			}
+			function validar(e) {
+				if(validaVacio('nombre')){
+					return true;
+				}else{
+					e.preventDefault();
+					return false;
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Formulario simple</h1>
+		<form action="formulario-validar.html">
+		  <label >Nombre:</label>
+		  <input type="text" id="nombre" name="nombre"><br><br>
+		  <input type="submit" id="enviar" value="Enviar">
+		</form>
+	</body>
+</html>
