@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Focus</title>
+	</head>
+	<style type="text/css">
+		.center{
+			margin: auto;
+		}
+		input{
+			margin: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		function getRandomColor() {
+		  var letters = '0123456789ABCDEF';
+		  var color = '#';
+		  for (var i = 0; i < 6; i++) {
+		    color += letters[Math.floor(Math.random() * 16)];
+		  }
+		  return color;
+		}
+	</script>
+	<script type="text/javascript">
+		window.onload = init;
+
+		function setOnFocus() {
+			const form = document.forms[0];
+
+			const interval = setInterval(() => {
+				const randomNumber = Math.floor(Math.random()*form.elements.length);
+				const randomElement = form.elements[randomNumber];
+				randomElement.focus();
+				randomElement.style.borderColor = getRandomColor();
+			}, 250);
+
+			form.stop.addEventListener('click', () => {
+				clearInterval(interval);
+			});
+		}
+
+		function setOnBlur() {
+			console.log(this);
+			this.removeAttribute("style");
+		}
+		
+		function init() {
+			const form = document.forms[0];
+
+			for (let i=0; i<form.elements.length; i+=1) {
+				const element = form.elements[i];
+				element.addEventListener('blur', setOnBlur.bind(element)) ;
+			}
+
+			form.start.addEventListener('click', setOnFocus);
+		}
+
+	</script>
+<body>
+	<div class="center">
+		<form id="formulario" action="#">
+		  <input type="text" />
+		  <input type="text" /><br/>
+		  <input type="text" />
+		  <input type="text" /><br/>
+		  <input type="text" />
+		  <input type="text" /><br/>
+		  <input type="text" />
+		  <input type="button" name="start" value="START">
+		  <input type="button" name="stop" value="STOP">
+		</form>
+	</div>
+</body>
+</html>
